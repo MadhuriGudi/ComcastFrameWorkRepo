@@ -78,16 +78,21 @@ public class CreateContactPage extends Organizations{
 		
 	}
 	
-	public void contactDate () {
-		
+	public void contactDate (String lastname) throws InterruptedException {
+		lstnmtbx.sendKeys(lastname);
 		String START_DATE=jlib.getSystemDate();
 		System.out.println(START_DATE);
 		startDate.clear();
+		System.out.println("Text field clear");
+		Thread.sleep(5000);
 		startDate.sendKeys(START_DATE);
+		System.out.println(START_DATE);
+		
 		
 		String END_DATE=jlib.getRequriedDateYYYYDDMM(30);
 		System.out.println(END_DATE);
 		endDate.clear();
+		Thread.sleep(5000);
 		endDate.sendKeys(END_DATE);
 		savebtn.click();
 		

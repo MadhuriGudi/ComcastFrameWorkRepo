@@ -40,37 +40,44 @@ public class ContactTest extends BaseClass {
 	@Test
 	public void createContactWithDate() throws Exception, IOException {
 	String	LASTNAME = elib.getDataFromExcel("contact", 7, 3) + jlib.getRandomNumber();
+	System.out.println("navigate to home page");
 		Homepage hp=new Homepage(driver);
+		System.out.println("home page displayed");
 		hp.getContactlink().click();
 		ContactPage cp=new ContactPage(driver);
 		cp.getNewcontbtn().click();
 		System.out.println("after click");
 		//enter mandatory field
 		CreateContactPage ccp=new CreateContactPage(driver);
-		wlib.waitForElement(driver,cp.getNewcontbtn());
-		ccp.CreateNewContact(LASTNAME);
-		ccp.contactDate();
+		Thread.sleep(5000);
+//		wlib.waitForElement(driver,cp.getNewcontbtn());
+		ccp.contactDate(LASTNAME);
 		}
        @Test
        public void CreateContactWithOrg() throws InterruptedException, Exception, IOException {
     	   String	LASTNAME = elib.getDataFromExcel("contact", 7, 3) + jlib.getRandomNumber();
     	   String ORGNAME=elib.getDataFromExcel("org", 7, 2)+jlib.getRandomNumber();
+    	   Homepage hp=new Homepage(driver);
+    	   System.out.println("home page displayed");
+    	   hp.getOrgLink().click();
     	   Organisationpage oip=new Organisationpage(driver);
    		oip.getCreateNeworgButton().click();
    		//Enter mandatory details
    		CreateNewOrganisationPage cnorgp=new CreateNewOrganisationPage(driver);
    		cnorgp.createorg(ORGNAME);
-   		//navigate to  contact page
+   		//navigate to  contact pageo
    		Thread.sleep(2000);
-   		Homepage hp=new Homepage(driver);
    		hp.getContactlink().click();
-   		ContactPage cp=new ContactPage(driver);
+  		System.out.println("clicked on contact page");
+  		ContactPage cp=new ContactPage(driver);
+   		System.out.println("navigated to contact info page");
    		cp.getNewcontbtn().click();
-   		System.out.println("after click");
-   	    //enter mandatory field
-   		CreateContactPage ccp=new CreateContactPage(driver);
-   		Thread.sleep(2000);
-   		ccp.createContWithOrg(LASTNAME, ORGNAME);
+   		
+  	    //enter mandatory field
+  		CreateContactPage ccp=new CreateContactPage(driver);
+ 		Thread.sleep(2000);
+ 		ccp.createContWithOrg(LASTNAME, ORGNAME);
+ 		
    		}
        }
     	   

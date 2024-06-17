@@ -48,6 +48,7 @@ String Industries=elib.getDataFromExcel("org", 4, 3);
 driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 //navigate to  organization page
 Homepage hp=new Homepage(driver);
+System.out.println("navigated to home page");
 hp.getOrgLink().click();
 //click on CreateOrganization link
 Organisationpage oip=new Organisationpage(driver);

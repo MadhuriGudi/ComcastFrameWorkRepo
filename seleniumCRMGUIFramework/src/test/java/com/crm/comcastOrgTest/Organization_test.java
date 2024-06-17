@@ -37,7 +37,7 @@ public class Organization_test extends BaseClass {
 		System.out.println(orgname+  "name is varified and fail");
 		}
 	//LogOut
-	hp.logout();
+	
 	}	
 
 @Test
@@ -56,7 +56,7 @@ oip.getCreateNeworgButton().click();
 //Enter mandatory details
 CreateNewOrganisationPage cnorgp=new CreateNewOrganisationPage(driver);
 cnorgp.createorg(orgname, Industries);
-hp.logout();
+
 }
 
 
@@ -64,7 +64,7 @@ hp.logout();
 public void createOrgWithPhonenumber() throws InterruptedException, Exception, IOException {
 	String orgname=elib.getDataFromExcel("org", 7, 2)+jlib.getRandomNumber();
 	String phoneNo=elib.getDataFromExcel("org", 7, 3);
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+	
 	//navigate to  organization page
 	Homepage hp=new Homepage(driver);
 	hp.getOrgLink().click();
@@ -76,7 +76,7 @@ public void createOrgWithPhonenumber() throws InterruptedException, Exception, I
 	cnorgp.createphoneNum(phoneNo);
 	cnorgp.createorg(orgname);
 	System.out.println(orgname+"created");
-	hp.logout();
+	
 }
 }
 	

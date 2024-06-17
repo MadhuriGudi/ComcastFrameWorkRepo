@@ -34,6 +34,9 @@ public class BaseClass {
 	 public WebDriver driver=null;
 	 public static WebDriver sdriver;
 	 public ExtentReports report;
+	 //
+	 // commit
+	 //
 	 
 	
 	@BeforeSuite

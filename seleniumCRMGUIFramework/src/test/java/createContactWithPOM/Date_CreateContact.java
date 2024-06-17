@@ -17,7 +17,7 @@ import com.comcast.crm.objectRepositryUtility.Homepage;
 import com.comcast.crm.objectRepositryUtility.LoginPage;
 
 public class Date_CreateContact {
-	public static void main(String[] args) throws IOException {
+	public static void main(String[] args) throws IOException, InterruptedException {
 		FileUtility flib=new FileUtility();
 		ExcelUtility Elib=new ExcelUtility();
 		JavaUtility jlib=new JavaUtility();
@@ -51,9 +51,7 @@ public class Date_CreateContact {
 		//enter mandatory field
 		CreateContactPage ccp=new CreateContactPage(driver);
 		wlib.waitForElement(driver,cp.getNewcontbtn());
-		ccp.CreateNewContact(LASTNAME);
-	
-		ccp.contactDate();
+		ccp.contactDate(LASTNAME);
 		
 
 		
